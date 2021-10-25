@@ -1,1 +1,1 @@
-https://img.shields.io/github/languages/count/TristanVarewijck/functional-programming
+![example workflow](https://img.shields.io/github/languages/count/TristanVarewijck/functional-programming)
