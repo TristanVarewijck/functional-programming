@@ -9,9 +9,7 @@ _Shields that represent my project - They change over time._ (https://shields.io
 ## Table of Contents
 
 - [Install](#install)
-  - [.env Sample](#env-sample)
-  - [Database structure](#database-structure)
-- [Feature requirements](#feature-requirements)
+- [Features](#features)
 - [Used Tools](#used-tools)
 - [Visuals](#visuals)
 - [!important files](#mportant-files)
@@ -23,38 +21,31 @@ _Shields that represent my project - They change over time._ (https://shields.io
 Clone the GitHub Repo locally
 
 ```
-git clone https://github.com/TristanVarewijck/Block-Tech.git
+git clone https://github.com/TristanVarewijck/functional-programming
 ```
 
 Install the Packages
 
 ```
-npm install
+yarn
 ```
 
 Start the Server
 
 ```
-npm start
+yarn run start
 ```
 
-### .env Sample
+<!-- ### .env Sample
 
 You need the following keys to make a connection to the database.
 
 ```
 DB_URL="mongodb+srv://<username>:<password>@matching-app.oyitr.mongodb.net/test"
 DB_NAME=<databaseName>
-```
+``` -->
 
-### Database structure
-
-The database im using is mongoDB and its structured very simple. You can see the structure in the visual below:
-
-<img src="https://github.com/TristanVarewijck/Block-Tech/blob/master/images/Database-structure.png" alt="database-structure" width="400">
-mongoDB -> database -> collection ->> data
-
-## Feature
+## Features
 
 - All
 - Activities
@@ -65,18 +56,12 @@ mongoDB -> database -> collection ->> data
 ## Used Tools
 
 - [git](https://git-scm.com/)
-- [pug](https://pugjs.org/api/getting-started.html)
+- [ejs](https://pugjs.org/api/getting-started.html)
 - [json](https://www.json.org/json-en.html)
-- [Heroku](https://www.heroku.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [ionicons](https://ionicons.com/)
 
 ## Visuals
 
-These are the current visuals of the filter feature.
-
-![homescreen ui](https://github.com/TristanVarewijck/Block-Tech/blob/master/images/design-homepage.png)
-![filter ui](https://github.com/TristanVarewijck/Block-Tech/blob/master/images/design-filter.png)
+These are the current visuals
 
 ## !mportant files
 
