@@ -1,4 +1,21 @@
 body {
-  color: green;
+  color: #000000;
+  background-color: #ffffff;
+  font-family: sans-serif;
+}
+
+body .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+}
+
+body .container .card {
+  background-color: #ffffff;
+  border: 0.5px solid #000000;
+  padding: 1em;
 }
 /*# sourceMappingURL=default.css.map */

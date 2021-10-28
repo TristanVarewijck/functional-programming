@@ -1,6 +1,7 @@
 const ejs = require("ejs");
 const axios = require("axios");
 const path = require("path");
+const colorsInfo = require("./modules/data.js");
 const express = require("express"),
   app = express(),
   port = 3000,
@@ -13,13 +14,22 @@ app.engine("ejs", engine);
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.render("index");
+
+  console.log(colorsInfo.colorInfo[0]);
+
+  let colors = colorsInfo.colorInfo;
+
+  // Object.keys(colorsInfo).forEach(key => {
+  //   console.log(key);
+  // })
+  // console.log(colorsInfo)
+  res.render("index", {
+    colors
+  });
 });
 
-app.post("/", (req, res) => {
 
-  res.redirect("/");
-});
+
 
 // PORT
 

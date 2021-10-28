@@ -1,12 +1,31 @@
 <% layout('../layout/boilerplate') -%>
-<h1>HELLO WORLD!</h1>
+<h1>Different eye colors</h1>
 
-<form action="/" method="POST">
+
+<div class="container">
+    <% colors.forEach(function(color){ %>
+    <div class="card" style="width: 18rem; background-color:<%= color.value %>;">
+        <div class="card-body">
+            <h5 class="card-title"><%= color.title %></h5>
+            <p class="card-text"> COLOR NAME: <%= color.name %> </p>
+            <p class="card-text"> HEX: <%= color.value %> </p>
+        </div>
+    </div>
+    <% }); %>
+</div>
+
+
+
+
+
+
+
+<!-- <form action="/" method="POST">
     <label for="color">Eye Colors</label>
     <select name="color" id="color">
         <option value="Blauw">Blauw</option>
         <option value="Bruin">Blauw</option>
         <option value="Groen">Blauw</option>
     </select>
-    <input type="submit">
-</form>
+    <input type="submit"> -->
+<!-- </form> -->

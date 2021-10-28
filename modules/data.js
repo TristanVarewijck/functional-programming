@@ -2,8 +2,6 @@ var toHex = require('colornames')
 const camelCase = require("camelcase");
 const data = require("../data.json");
 
-// const scale = data.map(data => data[2]);
-
 // COLORS CLEANING
 function cleanData() {
   //  all data
@@ -21,7 +19,7 @@ function cleanData() {
     .trim()
   )
 
-  console.log(cleanedColor)
+  // console.log(cleanedColor)
   cleanedColor = cleanedColor.sort()
 
 
@@ -50,16 +48,31 @@ function cleanData() {
         return 'mediumaquamarine'
     }
   }
-  console.log(newColors);
+  // console.log(newColors);
 
   let colorInfo = [];
   newColors.forEach(colorName => {
     colorInfo.push(toHex.get(colorName))
   })
 
-  console.log(colorInfo);
+  for (let i = 0; i < colorInfo.length; i++) {
+    colorInfo[i] = objects(colorInfo[i]);
+  }
 
+  function objects(obj) {
+    return {
+      title: "Eye Color",
+      value: obj.value,
+      name: obj.name
+    }
+  }
+
+  // console.log(colorInfo);
+
+  exports.colorInfo = colorInfo;
 };
+
+
 
 
 
