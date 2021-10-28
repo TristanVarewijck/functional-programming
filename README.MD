@@ -1,27 +1,10 @@
-<!-- BADGES -->
-![example workflow](https://img.shields.io/github/languages/count/TristanVarewijck/functional-programming)
-![example workflow](https://img.shields.io/github/languages/top/TristanVarewijck/functional-programming?color=purple&label=top-language)
-![example workflow](https://img.shields.io/github/repo-size/TristanVarewijck/functional-programming?color=green)
-![example workflow](https://img.shields.io/apm/l/vim-mode?color=yellow)
-![example workflow](https://img.shields.io/github/last-commit/TristanVarewijck/functional-programming?color=red)
-
-![banner](https://github.com/TristanVarewijck/Block-Tech/blob/master/images/Banner%20GitHub%20READ.ME.png)
-
-## ActiveTogether / Filter - Feature
+## Functional programming
 
 _Shields that represent my project - They change over time._ (https://shields.io/)
 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![Activity](https://img.shields.io/github/last-commit/TristanVarewijck/Block-Tech) ![Isseus](https://img.shields.io/github/issues/TristanVarewijck/Block-Tech) ![Language](https://img.shields.io/github/languages/top/TristanVarewijck/Block-Tech) ![Count](https://img.shields.io/github/languages/count/TristanVarewijck/Block-Tech?color=#a55eea) ![NPM](https://img.shields.io/npm/v/npm) ![MIT-License](https://img.shields.io/apm/l/vim-mode)
 
 ## Description
-
-I am a Communication & Multimedia Design student at the Hogeschool van Amsterdam and I am currently in my second year.
-For this block (block-web) I was given the task to build a feature for a matching app. it's an app that allows people to create groups or find groups to join.
-The groups you can join have restrictions: activities, duration, distance, and number of people. If you have joined a group, you have found a match. In this project I will create a filter feature where people can base their group on or with which they can find a group. We will be using back-end and front-end tools to create this feature.
-
-**Jobstory**
-
-**When** I plan to search for a match **I want to** set a group to allow a maximum of 20 people, **so that I can** search for groups with not too many people.
 
 ## Table of Contents
 
@@ -38,34 +21,40 @@ The groups you can join have restrictions: activities, duration, distance, and n
 ## Install
 
 Clone the GitHub Repo locally
+
 ```
 git clone https://github.com/TristanVarewijck/Block-Tech.git
 ```
+
 Install the Packages
+
 ```
 npm install
 ```
+
 Start the Server
+
 ```
 npm start
 ```
 
 ### .env Sample
+
 You need the following keys to make a connection to the database.
 
-````
+```
 DB_URL="mongodb+srv://<username>:<password>@matching-app.oyitr.mongodb.net/test"
 DB_NAME=<databaseName>
-````
-### Database structure 
+```
+
+### Database structure
+
 The database im using is mongoDB and its structured very simple. You can see the structure in the visual below:
 
 <img src="https://github.com/TristanVarewijck/Block-Tech/blob/master/images/Database-structure.png" alt="database-structure" width="400">
-mongoDB -> database -> collection ->> data 
+mongoDB -> database -> collection ->> data
 
-## Feature requirements
-
-This feature should atleast filter:
+## Feature
 
 - All
 - Activities

@@ -1,3 +1,4 @@
+var toHex = require('colornames')
 const camelCase = require("camelcase");
 const data = require("../data.json");
 
@@ -21,10 +22,15 @@ function cleanData() {
   )
 
   console.log(cleanedColor)
-
-
   cleanedColor = cleanedColor.sort()
-  let getColor = function (cleanedColor) {
+
+
+  let newColors = [];
+  cleanedColor.forEach(color => {
+    newColors.push(changeIt(color))
+  })
+
+  function changeIt(cleanedColor) {
     switch (cleanedColor) {
       case 'Bruin':
         return 'sienna'
@@ -38,14 +44,24 @@ function cleanData() {
         return 'saddlebrown'
       case 'Groen Grijs':
         return 'darkseagreen'
-      case 'Groen-Grijs':
+      case 'Groen Grijs':
         return 'darkseagreen'
-      case 'Groen-Blauw':
+      case 'Groen Blauw':
         return 'mediumaquamarine'
     }
   }
-  console.log(getColor.length);
+  console.log(newColors);
+
+  let colorInfo = [];
+  newColors.forEach(colorName => {
+    colorInfo.push(toHex.get(colorName))
+  })
+
+  console.log(colorInfo);
+
 };
+
+
 
 
 
