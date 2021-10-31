@@ -1,76 +1,36 @@
-var toHex = require('colornames')
-const camelCase = require("camelcase");
-const data = require("../data.json");
+const axios = require("axios").default;
 
-// COLORS CLEANING
-function cleanData() {
-  //  all data
-  let datas = data.map((data) => {
-    return camelCase(data["Wat is je oogkleur?"]);
-  });
-
-  // cleaning
-  let cleanedColor = datas.map(
-    (data) =>
-    data.charAt(0).toUpperCase() +
-    data
-    .substring(1)
-    .replace(/([A-Z])/g, " $1")
-    .trim()
-  )
-
-  // console.log(cleanedColor)
-  cleanedColor = cleanedColor.sort()
+// import axios from "axios";
 
 
-  let newColors = [];
-  cleanedColor.forEach(color => {
-    newColors.push(changeIt(color))
-  })
-
-  function changeIt(cleanedColor) {
-    switch (cleanedColor) {
-      case 'Bruin':
-        return 'sienna'
-      case 'Blauw':
-        return 'deepskyblue'
-      case 'Grijs':
-        return 'gray'
-      case 'Groen':
-        return 'green'
-      case 'Donkerbruin':
-        return 'saddlebrown'
-      case 'Groen Grijs':
-        return 'darkseagreen'
-      case 'Groen Grijs':
-        return 'darkseagreen'
-      case 'Groen Blauw':
-        return 'mediumaquamarine'
+async function petData() {
+    try {
+        const response = await axios('https://raw.githubusercontent.com/cmda-tt/course-21-22/main/tech-track-dataset.json');
+        console.log(response);
+    } catch (error) {
+        console.log("ERROR:" + error);
     }
-  }
-  // console.log(newColors);
+}
+petData()
 
-  let colorInfo = [];
-  newColors.forEach(colorName => {
-    colorInfo.push(toHex.get(colorName))
-  })
+// async function petData()
 
-  for (let i = 0; i < colorInfo.length; i++) {
-    colorInfo[i] = objects(colorInfo[i]);
-  }
+// try {
+//     let data = await axios({
+//             url: "https://raw.githubusercontent.com/cmda-tt/course-21-22/main/tech-track-dataset.json",
+//             method: "GET",
+//         })
+//         .then((response) => {
+//             return response;
+//         })
+//         .catch(function (error) {
+//             console.log("ERROR:" + error);
+//         });
 
-  function objects(obj) {
-    return {
-      title: "Eye Color",
-      value: obj.value,
-      name: obj.name
-    }
-  }
+//     console.log(data.data);
+// }
 
-  // console.log(colorInfo);
-
-  exports.colorInfo = colorInfo;
-};
+// petData()
 
 
 
@@ -78,45 +38,8 @@ function cleanData() {
 
 
 
-
-
-
-
-
-
-// let counts = {};
-// cleaned.forEach((data) => {
-//   counts[data] = (counts[data] || 0) + 1;
-// });
-
-
-cleanData();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   // filtering
-//   function test(data) {
-//     let testArray = [];
-//     cleaned.forEach((data) => {
-//       if (data === inputColor) {
-//         testArray.push(data);
-//       }
-//     });
-//     return testArray;
-//   }
-//   console.log(test(data).length);
-
-//   test();
+// async function fetchText() {
+//     let response = await fetch('/readme.txt');
+//     let data = await response.text();
+//     console.log(data);
 // }
