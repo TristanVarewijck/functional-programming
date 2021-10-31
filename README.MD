@@ -47,17 +47,14 @@ DB_NAME=<databaseName>
 
 ## Features
 
-- All
-- Activities
-- Distance
-- Duration
-- Attendence
+- 
 
 ## Used Tools
 
 - [git](https://git-scm.com/)
 - [ejs](https://pugjs.org/api/getting-started.html)
 - [json](https://www.json.org/json-en.html)
+- [express](https://expressjs.com/en/starter/hello-world.html)
 
 ## Visuals
 
@@ -70,18 +67,16 @@ Viewing these files will give you an idea of how this feature is built.
 
 [index.js](https://github.com/TristanVarewijck/Block-Tech/blob/master/index.js) :page_facing_up:
 
-[index.pug](https://github.com/TristanVarewijck/Block-Tech/blob/master/views/index.pug) :page_facing_up:
-
-[styles.css](https://github.com/TristanVarewijck/Block-Tech/blob/master/public/css/style.css) :page_facing_up:
+[index.ejs](https://github.com/TristanVarewijck/Block-Tech/blob/master/views/index.pug) :page_facing_up:
 
 [package.json](https://github.com/TristanVarewijck/Block-Tech/blob/master/package.json) :page_facing_up:
 
 ## Meta
 
-Tristan Varewijck - tristan.varewijck@gmail.com - https://github.com/TristanVarewijck/Block-Tech
+Tristan Varewijck - tristan.varewijck@gmail.com - https://github.com/TristanVarewijck/functional-programming
 
 ![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
 
 ## License
 
-Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/TristanVarewijck/Block-Tech/blob/master/LICENSE) for the full details.
+Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/TristanVarewijck/functional-programming/blob/master/LICENSE) for the full details.
