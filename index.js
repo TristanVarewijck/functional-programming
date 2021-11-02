@@ -1,23 +1,36 @@
+// require
 const ejs = require("ejs");
 const axios = require("axios");
 const path = require("path");
 const colorsInfo = require("./modules/color-data.js");
+require('dotenv').config();
+
+// server 
 const express = require("express"),
   app = express(),
   port = 3000,
   engine = require("ejs-mate");
-require('dotenv').config()
 
+
+// app settings
 app.use("/", express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.engine("ejs", engine);
 
 // ROUTES
-app.get("/", (req, res) => {
+
+// Color sort
+app.get("/color", (req, res) => {
   let colors = colorsInfo.colorInfo;
   res.render("index", {
     colors
   });
+});
+
+// Crypto data
+app.get("/crypto", (req, res) => {
+
+  res.render("crypto");
 });
 
 
