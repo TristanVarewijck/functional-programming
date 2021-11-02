@@ -26,13 +26,11 @@ getData();
 
 async function getData() {
     await axios(url)
-        .then((response) => {
+        .then(function (response) {
             let marketChangePercentages = response.data.map((data) => (data.market_cap_change_percentage_24h));
             getPercentage(marketChangePercentages)
 
-            let marketChangePercentages = response.data.map((data) => (data.market_cap_change_percentage_24h));
-            getPercentage(marketChangePercentages)
-            // console.log(marketChangePercentages);
+
         })
         .catch(function (err) {
             console.log(err);
@@ -43,7 +41,7 @@ async function getData() {
 // less decimals
 function getPercentage(data) {
     data.forEach((data) => {
-        newPercentages.push(data.toString().replace("-", " "));
+        newPercentages.push((Math.round(data * 100) / 100).toString().replace(" ", "$"));
     });
 
     console.log(newPercentages);
