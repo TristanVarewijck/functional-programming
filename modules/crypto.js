@@ -2,12 +2,14 @@
 const colors = require("colors");
 const axios = require("axios").default;
 require("dotenv").config();
+// let api = require("./cryptoApi")
 
+// console.log(api.url);
 // cleaned data sets
 let newPercentages = [];
+let newLastUpdatedDates = [];
 
-const url =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h";
+const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h";
 
 // async function with axios
 // async function getUser() {
@@ -22,19 +24,30 @@ const url =
 getData();
 
 async function getData() {
-  await axios(url)
+  await axios(url) // respones handlers and function callers
     .then(function (response) {
+      let lastUpdatedDates = response.data.map((data) => data.last_updated);
+      getlastUpdated(lastUpdatedDates)
+
       let marketChangePercentages = response.data.map(
         (data) => data.market_cap_change_percentage_24h
       );
       getPercentage(marketChangePercentages);
 
-      let coinIds = response.data.map((data) => data.id);
-      console.log(coinIds);
+      // let coinIds = response.data.map((data) => data.id);
+      // getIds(coinIds);
     })
     .catch(function (err) {
       console.log(err);
     });
+}
+
+function getlastUpdated(data) {
+  data.forEach((data) => {
+    newLastUpdatedDates.push(
+      data.slice(0, 19).replace("T", "  UTC: "));
+  });
+  console.log(newLastUpdatedDates);
 }
 
 // less decimals
@@ -46,23 +59,15 @@ function getPercentage(data) {
     // new percentage logger
     newPercentages.forEach((percentage) => {
       if (percentage < 0) {
-        console.log(colors.red(percentage).toString());
+        // console.log(colors.red(percentage).toString());
       } else {
-        console.log(color.green(percentage));
+        // console.log(colors.green(percentage));
       }
     });
   });
 }
 
 // to uppercase
-
-function getId(ids) {
-  data.forEach((data) => {
-    newPercentages.push(data.toString().replace("-", " "));
-  });
-
-  console.log(newPercentages);
-}
 
 // function cleanData(data) {
 //     //  all data
