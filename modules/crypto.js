@@ -1,15 +1,13 @@
 // packages
-const axios = require("axios").default
-require('dotenv').config();
+const colors = require("colors");
+const axios = require("axios").default;
+require("dotenv").config();
 
 // cleaned data sets
 let newPercentages = [];
 
-
-
-const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h";
-
-
+const url =
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h";
 
 // async function with axios
 // async function getUser() {
@@ -21,46 +19,50 @@ const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&orde
 //     }
 // }
 
-
 getData();
 
 async function getData() {
-    await axios(url)
-        .then(function (response) {
-            let marketChangePercentages = response.data.map((data) => (data.market_cap_change_percentage_24h));
-            getPercentage(marketChangePercentages)
+  await axios(url)
+    .then(function (response) {
+      let marketChangePercentages = response.data.map(
+        (data) => data.market_cap_change_percentage_24h
+      );
+      getPercentage(marketChangePercentages);
 
-
-        })
-        .catch(function (err) {
-            console.log(err);
-        })
-};
-
+      let coinIds = response.data.map((data) => data.id);
+      console.log(coinIds);
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
 
 // less decimals
 function getPercentage(data) {
-    data.forEach((data) => {
-        newPercentages.push((Math.round(data * 100) / 100).toString().replace(" ", "$"));
+  data.forEach((data) => {
+    newPercentages.push(
+      (Math.round(data * 100) / 100).toString().replace(" ", "$")
+    );
+    // new percentage logger
+    newPercentages.forEach((percentage) => {
+      if (percentage < 0) {
+        console.log(colors.red(percentage).toString());
+      } else {
+        console.log(color.green(percentage));
+      }
     });
-
-    console.log(newPercentages);
-
+  });
 }
 
 // to uppercase
 
-
 function getId(ids) {
-    data.forEach((data) => {
-        newPercentages.push(data.toString().replace("-", " "));
-    });
+  data.forEach((data) => {
+    newPercentages.push(data.toString().replace("-", " "));
+  });
 
-    console.log(newPercentages);
-
+  console.log(newPercentages);
 }
-
-
 
 // function cleanData(data) {
 //     //  all data
@@ -76,20 +78,15 @@ function getId(ids) {
 //         .trim()
 //     )
 
-
-
-
 //  data parts
 // let percentage = datas.map((data) => (data.market_cap_change_percentage_24h));
-
-
 
 // async function questions(data) {
 //     // percentages filteren
 //     const marketChangePercentages = await data.map((data) => (data.market_cap_change_percentage_24h));
 //     getPercentage(marketChangePercentages);
 
-//     // id's filteren 
+//     // id's filteren
 //     const coinIds = await data.map((data) => (data.id));
 //     getId(coinIds);
 // }
