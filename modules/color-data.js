@@ -3,7 +3,7 @@ const camelCase = require("camelcase");
 // const data = require("../data.json");
 const axios = require('axios').default
 
-
+// https://github.com/axios/axios
 async function petData() {
   await axios({
       url: "https://raw.githubusercontent.com/cmda-tt/course-21-22/main/tech-track-dataset.json",
@@ -42,6 +42,7 @@ function cleanData(data) {
     newColors.push(changeIt(color))
   })
 
+  // Uitgelegd door Juul Vrasdonk. Zelf toegepast. 
   function changeIt(cleanedColor) {
     switch (cleanedColor) {
       case 'Bruin':
