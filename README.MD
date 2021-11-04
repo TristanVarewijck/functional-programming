@@ -63,7 +63,11 @@ Viewing these files will give you an idea of how this feature is built.
 
 [index.js](https://github.com/TristanVarewijck/functional-programming/blob/master/index.js) :page_facing_up:
 
-[index.ejs](https://github.com/TristanVarewijck/functional-programming/blob/master/views/index.pug) :page_facing_up:
+[crypto.js](https://github.com/TristanVarewijck/functional-programming/blob/master/modules/crypto.js) :page_facing_up:
+
+[color-data.js](https://github.com/TristanVarewijck/functional-programming/blob/master/modules/color-data.js) :page_facing_up:
+
+[index.ejs](https://github.com/TristanVarewijck/functional-programming/blob/master/views/index.ejs) :page_facing_up:
 
 [package.json](https://github.com/TristanVarewijck/functional-programming/blob/master/package.json) :page_facing_up:
 
