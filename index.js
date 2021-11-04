@@ -2,13 +2,14 @@
 const ejs = require("ejs");
 const axios = require("axios");
 const path = require("path");
-const colorsInfo = require("./modules/color-data.js");
+// const colorsInfo = require("./modules/color-data.js");
+const cryptoData = require("./modules/crypto.js");
 require('dotenv').config();
 
 // server 
 const express = require("express"),
   app = express(),
-  port = 3000,
+  port = 5050,
   engine = require("ejs-mate");
 
 
@@ -29,8 +30,12 @@ app.get("/color", (req, res) => {
 
 // Crypto data
 app.get("/crypto", (req, res) => {
+  let percentages = newPercentages
+  console.log(percentages);
 
-  res.render("crypto");
+  res.render("crypto", {
+    percentages
+  });
 });
 
 
