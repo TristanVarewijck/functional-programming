@@ -36,18 +36,13 @@ Start the Server
 yarn run start
 ```
 
-<!-- ### .env Sample
+### .env Sample
 
-You need the following keys to make a connection to the database.
+You need the following keys to make a connection to the API. :
 
 ```
-DB_URL="mongodb+srv://<username>:<password>@matching-app.oyitr.mongodb.net/test"
-DB_NAME=<databaseName>
-``` -->
-
-## Features
-
-- 
+API_URL='https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=1&page=1&sparkline=false&price_change_percentage=24h'
+```
 
 ## Used Tools
 
@@ -59,17 +54,18 @@ DB_NAME=<databaseName>
 ## Visuals
 
 These are the current visuals
+NO VISUALS YET!
 
 ## !mportant files
 
 Of course all files are important but you should at least have a look at these files if you are interested in this repo.
 Viewing these files will give you an idea of how this feature is built.
 
-[index.js](https://github.com/TristanVarewijck/Block-Tech/blob/master/index.js) :page_facing_up:
+[index.js](https://github.com/TristanVarewijck/functional-programming/blob/master/index.js) :page_facing_up:
 
-[index.ejs](https://github.com/TristanVarewijck/Block-Tech/blob/master/views/index.pug) :page_facing_up:
+[index.ejs](https://github.com/TristanVarewijck/functional-programming/blob/master/views/index.pug) :page_facing_up:
 
-[package.json](https://github.com/TristanVarewijck/Block-Tech/blob/master/package.json) :page_facing_up:
+[package.json](https://github.com/TristanVarewijck/functional-programming/blob/master/package.json) :page_facing_up:
 
 ## Meta
 
