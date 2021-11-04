@@ -9,7 +9,6 @@ _Shields that represent my project - They change over time._ (https://shields.io
 ## Table of Contents
 
 - [Install](#install)
-- [Features](#features)
 - [Used Tools](#used-tools)
 - [Visuals](#visuals)
 - [!important files](#mportant-files)
@@ -27,7 +26,7 @@ git clone https://github.com/TristanVarewijck/functional-programming
 Install the Packages
 
 ```
-yarn
+yarn add 
 ```
 
 Start the Server
@@ -49,7 +48,7 @@ API_URL='https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=ma
 - [git](https://git-scm.com/)
 - [ejs](https://pugjs.org/api/getting-started.html)
 - [json](https://www.json.org/json-en.html)
-- [express](https://expressjs.com/en/starter/hello-world.html)
+- [node](https://nodejs.org/en/)
 
 ## Visuals
 
@@ -59,7 +58,7 @@ NO VISUALS YET!
 ## !mportant files
 
 Of course all files are important but you should at least have a look at these files if you are interested in this repo.
-Viewing these files will give you an idea of how this feature is built.
+Viewing these files will give you an idea of how this software is built.
 
 [index.js](https://github.com/TristanVarewijck/functional-programming/blob/master/index.js) :page_facing_up:
 
