@@ -2,19 +2,20 @@
 const colors = require("colors");
 const axios = require("axios").default;
 require("dotenv").config();
-let data = getData();
+// let data = [];
+// console.log(data);
 // https://github.com/axios/axios
 async function getData() {
   await axios(process.env.API_URL) // respones handlers and function callers
     .then(function (res) {
-      let cryptoCurrencies = res.data;
+      cryptoCurrencies = res.data;
       // cryptoCurrencies wordt overschreven door de nieuwe array die is gemaakt in de functie getlastupdated
       // 1.
       cryptoCurrencies = getLastUpdated(cryptoCurrencies);
       //  2.
       cryptoCurrencies = getPercentage(cryptoCurrencies);
 
-      return cryptoCurrencies;
+      console.log(cryptoCurrencies);
     })
     .catch(function (err) {
       console.log(err);
@@ -40,6 +41,7 @@ function getPercentage(cryptoCurrencies) {
     return currency;
   });
 }
+
 
 // function aanroepen
 getData();
